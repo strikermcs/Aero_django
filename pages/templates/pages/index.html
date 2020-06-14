@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Main Page</title>
+    </head>
+    <body>
+        <div style="text-align: center;" >
+            <h1>{{ header }}</h1>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio est sint voluptatibus dignissimos praesentium, itaque cum nesciunt sunt repellendus pariatur voluptas, porro ipsam? Corporis magni quam, nam et explicabo facilis!
+            </p>
+            <ul>
+                {% for post in posts %}
+                <li>
+                    <b>
+                        {{post.title}}
+                    </b>
+                        {{post.text}}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>    
+    
+    </body>
+</html>
