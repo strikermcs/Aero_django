@@ -111,109 +111,24 @@
 
             <div class="services__block block-services">
               <div class="block-services__row">
+
+                   {% for my_services in services %}
                 <div class="block-services__column">
                 
                 <div class="block-services__item item">
 
                   <div class="item__icon">
-                    <picture><source srcset="{% static "img/icons/Forma_1.webp" %}" type="image/webp"><img src="{% static "img/icons/Forma_1.png" %}" alt=""></picture>
+                    <img src="{{ MEDIA_URL }}{{ my_services.icon.url}}" alt="">
                   </div>
-                  <div class="item__title">Graphic Design</div>
-                  <div class="item__text">When your customers can buy what you sell from others, 
-                    that’s called competition. That also makes it a for commodity.</div>
+                  <div class="item__title">{{my_services.title}}</div>
+                  <div class="item__text">{{my_services.text}}</div>
                   <a href="#" class="item__link"><span>Read More</span></a>
                   
                 </div>
-                
               </div>
-              <div class="block-services__column">
-                
-                <div class="block-services__item item">
-
-                  <div class="item__icon">
-                    <picture><source srcset="{% static "img/icons/Forma_2.webp" %}" type="image/webp"><img src="{% static "img/icons/Forma_2.png" %}" alt=""></picture>
-                  </div>
-                  <div class="item__title">Photography</div>
-                  <div class="item__text">Your customers can buy what you sell from the others, that’s called competition. 
-                    That also makes it a Line Miliye dilam commodity.</div>
-                  <a href="#" class="item__link"><span>Read More</span></a>
-                  
-                </div>
-                
-              </div>
-
-
-              <div class="block-services__column">
-                
-                <div class="block-services__item item">
-
-                  <div class="item__icon">
-                    <picture><source srcset="{% static "img/icons/L0001.webp" %}" type="image/webp"><img src="{% static "img/icons/L0001.png" %}" alt=""></picture>
-                  </div>
-                  <div class="item__title">Web Design</div>
-                  <div class="item__text">Customers can buy what you sell from others, that’s called competition.
-                     That also makes it a commodity That make you sence</div>
-                  <a href="#" class="item__link"><span>Read More</span></a>
-                  
-                </div>
-                
-              </div>
-
-
-              <div class="block-services__column">
-                
-                <div class="block-services__item item">
-
-                  <div class="item__icon">
-                    <picture><source srcset="{% static "img/icons/Forma_4.webp" %}" type="image/webp"><img src="{% static "img/icons/Forma_4.webp" %}" alt=""></picture>
-                  </div>
-                  <div class="item__title">Social Media</div>
-                  <div class="item__text">Customers can buy what you sell from others, that’s called competition.
-                     That also makes it a commodity That make you sence</div>
-                  <a href="#" class="item__link"><span>Read More</span></a>
-                  
-                </div>
-                
-              </div>
-
-              
-              <div class="block-services__column">
-                
-                <div class="block-services__item item">
-
-                  <div class="item__icon">
-                    <picture><source srcset="{% static "img/icons/Forma_5.webp" %}" type="image/webp"><img src="{% static "img/icons/Forma_5.png" %}" alt=""></picture>
-                  </div>
-                  <div class="item__title">Marketing</div>
-                  <div class="item__text">Customers can buy what you sell from others, that’s called competition.
-                     That also makes it a commodity That make you sence</div>
-                  <a href="#" class="item__link"><span>Read More</span></a>
-                  
-                </div>
-                
-              </div>
-
-              
-              <div class="block-services__column">
-                
-                <div class="block-services__item item">
-
-                  <div class="item__icon">
-                    <picture><source srcset="{% static "img/icons/Forma_6.webp" %}" type="image/webp"><img src="{% static "img/icons/Forma_6.png" %}" alt=""></picture>
-                  </div>
-                  <div class="item__title">App Developing</div>
-                  <div class="item__text">Customers can buy what you sell from others, that’s called competition.
-                     That also makes it a commodity That make you sence</div>
-                  <a href="#" class="item__link"><span>Read More</span></a>
-                  
-                  </div>
-                
-              </div>
-
-              </div>
-              
+               {% endfor %}
+               
             </div>
-            
 
         </div>
         </section>

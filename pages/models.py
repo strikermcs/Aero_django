@@ -20,3 +20,11 @@ class my_skills(models.Model):
     def __str__(self):
         return self.skill
         
+
+class my_services(models.Model):
+    icon = models.ImageField(upload_to='images/', null=True, blank=True)
+    title = models.CharField(max_length=50)
+    text = models.TextField()
+
+    def __str__(self):
+        return self.title        
