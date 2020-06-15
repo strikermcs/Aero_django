@@ -1,6 +1,8 @@
 from django.contrib import admin
 
-from . import models
+from pages.models import Main_win, my_skills
 
-admin.site.register(models.Post)
-admin.site.register(models.Comment)
+admin.site.register(Main_win)
+admin.site.register(my_skills)
+
+

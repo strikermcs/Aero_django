@@ -1,14 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .models import Post
+from .models import Main_win, my_skills 
 
 def my_first_simple_view(request):
     return render(
         request,
         'pages/index.html',
         {
-            'header': 'Index',
-            'posts': Post.objects.all()
+            "Main": Main_win.objects.get(id = 1),
+            "skills": my_skills.objects.all(),
         }
     )

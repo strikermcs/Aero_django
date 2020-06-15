@@ -1,25 +1,22 @@
 from django.db import models
 
-class Post(models.Model):
+class Main_win(models.Model):
+    title = models.CharField(max_length=50)
+    background = models.ImageField(upload_to='images/', null=True, blank=True)
+    photo_me = models.ImageField(upload_to='images/', null=True, blank=True)
+    about_me = models.TextField()
 
-    title = models.CharField(max_length=120)
+    def __str__(self):              # __unicode__ on Python 2
+        return self.title
 
-    text = models.TextField()
 
+
+
+class my_skills(models.Model):
+    skill = models.CharField(max_length = 50)
+    progress = models.CharField(max_length = 4)
+
+   
     def __str__(self):
-        return self.title;
-
-
-
-class Comment(models.Model):
-
-    text = models.TextField()
-
-    post = models.ForeignKey(
-        Post,
-        on_delete=models.CASCADE
-    )
-    
-    
-    def __str__(self):
-        return self.text;
+        return self.skill
+        
