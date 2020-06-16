@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .models import Main_win, my_skills, my_services 
+from .models import Main_win, my_skills, my_services, Testimonials
 
 def my_first_simple_view(request):
     return render(
@@ -11,5 +11,6 @@ def my_first_simple_view(request):
             "Main": Main_win.objects.get(id = 1),
             "skills": my_skills.objects.all(),
             "services": my_services.objects.all(),
+            "tesm": Testimonials.objects.all(),
         }
     )

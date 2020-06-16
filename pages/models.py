@@ -27,4 +27,14 @@ class my_services(models.Model):
     text = models.TextField()
 
     def __str__(self):
-        return self.title        
+        return self.title      
+
+
+class Testimonials(models.Model):
+    name = models.CharField(max_length=20)
+    position = models.CharField(max_length=20)   
+    photo = models.ImageField(upload_to='images/', null=True, blank=True)
+    text = models.TextField()  
+
+    def __str__(self):
+        return self.name      

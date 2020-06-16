@@ -146,11 +146,11 @@
 
                   <div class="works__column  main-column">
                     <a href="#" class="works__photo">
-                      <picture><source srcset="img/Portfolio/port1.webp" type="image/webp"><img src="img/Portfolio/port1.png" alt=""></picture>
+                      <picture><source srcset="{% static "img/Portfolio/port1.webp" %}" type="image/webp"><img src="{% static "img/Portfolio/port1.png" %}" alt=""></picture>
                     </a>
 
                      <a href="#" class="works__photo">
-                      <picture><source srcset="img/Portfolio/4.webp" type="image/webp"><img src="img/Portfolio/4.png" alt=""></picture>
+                      <picture><source srcset="{% static "img/Portfolio/4.webp" %}" type="image/webp"><img src="{% static "img/Portfolio/4.png" %}" alt=""></picture>
                     </a>
                   </div>
 
@@ -158,12 +158,12 @@
                   <div class="works__column">
                     <a href="#" class="works__photo main-photo">
                         <div class="main-photo__img">
-                         <picture><source srcset="img/Portfolio/main.webp" type="image/webp"><img src="img/Portfolio/main.png" alt=""></picture>
+                         <picture><source srcset="{% static "img/Portfolio/main.webp" %}" type="image/webp"><img src="{% static "img/Portfolio/main.png" %}" alt=""></picture>
                           </div>
                           <div class="main-photo__overlay overlay">
                             <div class="overlay__body">
                             <div class="overlay__decor">
-                            <picture><source srcset="img/Portfolio/decor_overlay_plus.webp" type="image/webp"><img src="img/Portfolio/decor_overlay_plus.png" alt=""></picture>
+                            <picture><source srcset="{% static "img/Portfolio/decor_overlay_plus.webp" %}" type="image/webp"><img src="{% static "img/Portfolio/decor_overlay_plus.webp" %}" alt=""></picture>
                             </div>
                             <div class="overlay__title">Island in the ocean</div>
                             <div class="overlay__subtitle">Photo</div>
@@ -176,17 +176,17 @@
                       </a>
 
                      <a href="#" class="works__photo">
-                      <picture><source srcset="img/Portfolio/5.webp" type="image/webp"><img src="img/Portfolio/5.png" alt=""></picture>
+                      <picture><source srcset="{% static "img/Portfolio/5.webp" %}" type="image/webp"><img src="{% static "img/Portfolio/5.png" %}" alt=""></picture>
                     </a>
                   </div>
 
                   <div class="works__column">
                     <a href="#" class="works__photo">
-                      <picture><source srcset="img/Portfolio/3.webp" type="image/webp"><img src="img/Portfolio/3.png" alt=""></picture>
+                      <picture><source srcset="{% static "img/Portfolio/3.webp" %}" type="image/webp"><img src="{% static "img/Portfolio/3.webp" %}" alt=""></picture>
                     </a>
 
                      <a href="#" class="works__photo">
-                      <picture><source srcset="img/Portfolio/6.webp" type="image/webp"><img src="img/Portfolio/6.png" alt=""></picture>
+                      <picture><source srcset="{% static "img/Portfolio/6.webp" %}" type="image/webp"><img src="{% static "img/Portfolio/6.webp" %}" alt=""></picture>
                     </a>
                   </div>
 
@@ -229,51 +229,25 @@
             <div class="testimonials__content content-testimonials">
 
               <div class="content-testimonials__row">
-                <div class="content-testimonials__column">
-                  <div class="content-testimonials__item item-testimonials">
-                   <div class="item-testimonials__user">
-                      <div class="item-testimonials__user-photo">
-                        <picture><source srcset="img/testimonials/https___www.lifeofpix.com_wp-content_uploads_2017_03_2017-02-26-img-2199.cr2_.webp" type="image/webp"><img src="img/testimonials/https___www.lifeofpix.com_wp-content_uploads_2017_03_2017-02-26-img-2199.cr2_.png" alt=""></picture>
-                      </div>
-                      <div class="item-testimonials__user-about">
-                      <div class="item-testimonials__user-name">Jonathon Lee</div>
-                      <div class="item-testimonials__user-position">UI/UX Designer</div>
-                    </div>
-                   </div>
-                   <div class="item-testimonials__content">
-                    Finding the right partner to help make this goal a reality was key. The smart and creative team at Blue 
-                    Fountain Media has helped anthony.com establish itself as a successful online business and become synonymous
-                     with an enjoyable solutions.
-                   </div>
-                   
-                   
-                    
-                  </div>
-                  
-                </div>
-                
 
+                     {% for Testimonials in tesm %}
                 <div class="content-testimonials__column">
                   <div class="content-testimonials__item item-testimonials">
                    <div class="item-testimonials__user">
                       <div class="item-testimonials__user-photo">
-                        <picture><source srcset="img/testimonials/https___www.lifeofpix.com_wp-content_uploads_2017_11_Grace4.webp" type="image/webp"><img src="img/testimonials/https___www.lifeofpix.com_wp-content_uploads_2017_11_Grace4.png" alt=""></picture>
+                        <img src="{{ MEDIA_URL }}{{ Testimonials.photo.url}}" alt="">
                       </div>
                       <div class="item-testimonials__user-about">
-                      <div class="item-testimonials__user-name">Emalia Clark</div>
-                      <div class="item-testimonials__user-position">Frontend Dev</div>
+                      <div class="item-testimonials__user-name">{{Testimonials.name}}</div>
+                      <div class="item-testimonials__user-position">{{Testimonials.position}}</div>
                     </div>
                    </div>
-                   <div class="item-testimonials__content">
-                    Blue Fountain Media came up with the design on their first try, delivered the complete package on a reasonable budget,
-                     and continued to fine-tune it. That wasn't enough -- they also created a plan to market the website and increase traffic.
-                   </div>
+                   <div class="item-testimonials__content"> {{Testimonials.text}}</div>
                    
-                   
-                    
                   </div>
                   
                 </div>
+                {% endfor %}
 
 
               </div>
